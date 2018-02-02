@@ -1,18 +1,28 @@
 <h1>Stocks#index</h1>
 <p>Find me in app/views/stocks/index.html.erb</p>
-<p><%= @results %></p>
+<% @results.each do |item| %>
+<h2><%= item['symbol'] %></h2>
+<p>Sector: <%= item['sector'].capitalize %></p>
+<p>Market Percent: <%= item['marketPercent'] %>%</p>
+<p>Last Sale Price: $<%= item['lastSalePrice'] %></p>
+<% end%>
+
+
 <table border="1px">
   <tr>
     <th>Date</th>
     <th>Headline</th>
+    <th>Summary</th>
     <th>Source</th>
+
 
   </tr>
 <% @news.each do |article| %>
   <tr>
     <td><%= article['datetime'] %></td>
     <td><%= article['headline'] %></td>
-    <td><a href="<%= article['url']%>"><%= article['source'] %></a></td>
+    <td><%= article['summary'] %></td>
+    <td><a href="<%= article['url']%>" target="_blank"><%= article['source'] %></a></td>
   </tr>
 <% end %>
 

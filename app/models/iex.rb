@@ -22,4 +22,8 @@ class Iex
   def news
     self.class.get("https://api.iextrading.com/1.0/stock/googl/news").parsed_response
   end
+
+  def charts
+    self.class.get("https://api.iextrading.com/1.0/stock/googl/chart/1m").parsed_response
+  end
 end
