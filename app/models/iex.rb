@@ -18,4 +18,8 @@ class Iex
   def tops
     self.class.get("/1.0/tops", @options)
   end
+
+  def news
+    self.class.get("https://api.iextrading.com/1.0/stock/googl/news").parsed_response
+  end
 end
