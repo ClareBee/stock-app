@@ -7,12 +7,16 @@
 <% @charts.map do |item| %>
   <% data[item['date']] = item['changePercent'] %>
   <% end %>
-  <p>Percentage Change in stock price per day</p>
+  <p>Percentage Change in stock price per day since <%= @charts[0]['date'] %></p>
 <%= line_chart  data, colors: ["green"]  %>
 
 <% finData = {} %>
+<% costData = {} %>
+<% rAndD = {} %>
 <%@financials['financials'].reverse.map do |item| %>
 <% finData[item['reportDate']] = item['grossProfit'] %>
+<% costData[item['reportDate']] = item['costOfRevenue'] %>
+<% rAndD[item['reportDate']] = item['researchAndDevelopment'] %>
 <% end %>
-<p>Gross Profit ($) per quarter since <%= @financials['financials'][-1]['reportDate'] %></p>
-<%= column_chart finData, colors: ["purple"] %>
+<p>Financial reports per quarter since <%= @financials['financials'][-1]['reportDate'] %></p>
+<%= column_chart [{name: "profit", data: finData}, {name: "revenue cost", data: costData}, {name: "r & d", data: rAndD}], colors: ["purple", "yellow", "red"]%>
