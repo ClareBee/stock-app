@@ -1,3 +1,8 @@
 <h1>Stocks#charts</h1>
-<p>Find me in app/views/stocks/charts.html.erb</p>
-<p><%= @charts %></p>
+<p><%= params %></p>
+<% data = {} %>
+<% @charts.map do |item| %>
+  <% data[item['date']] = item['change'] %>
+  <% end %>
+  <p>Change in stock price between opening and closing prices per day</p>
+<%= line_chart  data, colors: ["green"]  %>

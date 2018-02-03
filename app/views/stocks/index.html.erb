@@ -1,12 +1,11 @@
 <h1>Stocks#index</h1>
 <p>Find me in app/views/stocks/index.html.erb</p>
-<% @results.each do |item| %>
-<h2><%= item['symbol'] %></h2>
-<p>Sector: <%= item['sector'].capitalize %></p>
-<p>Market Percent: <%= item['marketPercent'] %>%</p>
-<p>Last Sale Price: $<%= item['lastSalePrice'] %></p>
-<% end%>
-<%= pie_chart({10.day.ago => 5, 15.day.ago => 10})%>
+
+<h2><%= @result['symbol'] %></h2>
+<p>Company Name: <%= @result['companyName'] %></p>
+<p>Industry: <%= @result['industry'] %></p>
+<p>Description<%= @result['description'] %></p>
+
 
 <table border="1px">
   <tr>

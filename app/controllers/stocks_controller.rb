@@ -1,7 +1,7 @@
 class StocksController < ApplicationController
   def index
     iex = Iex.new("GOOGL")
-    @results = iex.tops
+    @result = iex.info
     @news = iex.news
   end
 
