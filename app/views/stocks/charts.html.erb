@@ -17,5 +17,5 @@
 <% costData[item['reportDate']] = item['costOfRevenue'] %>
 <% rAndD[item['reportDate']] = item['researchAndDevelopment'] %>
 <% end %>
-<h1><%=@financials['symbol']%> financial reports per quarter since <%= @financials['financials'][-1]['reportDate'] %></h1>
+<h1><%=@financials['symbol']%> Financial reports per quarter since <%= @financials['financials'][-1]['reportDate'] %></h1>
 <%= column_chart [{name: "profit $", data: finData}, {name: "revenue cost $", data: costData}, {name: "r & d $", data: rAndD}], colors: ["purple", "yellow", "red"]%>
