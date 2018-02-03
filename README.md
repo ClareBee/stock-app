@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Ruby on Rails App with IEX data: Showing latest news stories and stock data for Google (Alphabet Inc.)
 
-Things you may want to cover:
+* `rails s` - runs on localhost:3000
 
-* Ruby version
+* Ruby version: 2.4.1
 
-* System dependencies
+* System dependencies: bootstrap, httparty, chartkick, highcharts
 
-* Configuration
+* Database creation: postgresql
 
-* Database creation
+* API: https://iextrading.com/developer/
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Deployed to Heroku: https://ruby-stocks-app.herokuapp.com/
