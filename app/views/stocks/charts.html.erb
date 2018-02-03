@@ -7,7 +7,7 @@
   <% data[item['date']] = item['changePercent'] %>
   <% end %>
   <p>Percentage Change in stock price per day since <%= @charts[0]['date'] %></p>
-<%= line_chart  data, colors: ["green"]  %>
+<%= line_chart  [{name: "change %", data: data}], colors: ["green"]  %>
 
 <% finData = {} %>
 <% costData = {} %>
