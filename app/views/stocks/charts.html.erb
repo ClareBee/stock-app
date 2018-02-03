@@ -5,7 +5,14 @@
 <p>Price at end: $<%= @charts[-1]['close'] %></p>
 <% data = {} %>
 <% @charts.map do |item| %>
-  <% data[item['date']] = item['open'] %>
+  <% data[item['date']] = item['changePercent'] %>
   <% end %>
-  <p>Percentage Change in stock price between opening and closing prices per day</p>
+  <p>Percentage Change in stock price per day</p>
 <%= line_chart  data, colors: ["green"]  %>
+
+<% finData = {} %>
+<%@financials['financials'].reverse.map do |item| %>
+<% finData[item['reportDate']] = item['grossProfit'] %>
+<% end %>
+<p>Gross Profit ($) per quarter since <%= @financials['financials'][-1]['reportDate'] %></p>
+<%= column_chart finData, colors: ["purple"] %>

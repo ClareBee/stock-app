@@ -8,6 +8,7 @@ class StocksController < ApplicationController
   def charts
     iex = Iex.new("GOOGL")
     @charts = iex.charts
+    @financials = iex.financials
   end
 
 end
