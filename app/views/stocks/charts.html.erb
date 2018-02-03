@@ -5,7 +5,7 @@
 <p>Price at end: $<%= @charts[-1]['close'] %></p>
 <% data = {} %>
 <% @charts.map do |item| %>
-  <% data[item['date']] = item['changePercent'] %>
+  <% data[item['date']] = item['open'] %>
   <% end %>
   <p>Percentage Change in stock price between opening and closing prices per day</p>
 <%= line_chart  data, colors: ["green"]  %>
