@@ -1,5 +1,5 @@
 
-<h1>Stock performance over past 4 Weeks</h1>
+<h1><%=@financials['symbol']%> Stock performance over past 4 Weeks</h1>
 <p>Price at beginning: $<%= @charts[0]['close'] %></p>
 <p>Price at end: $<%= @charts[-1]['close'] %></p>
 <% data = {} %>
@@ -17,5 +17,5 @@
 <% costData[item['reportDate']] = item['costOfRevenue'] %>
 <% rAndD[item['reportDate']] = item['researchAndDevelopment'] %>
 <% end %>
-<p>Financial reports per quarter since <%= @financials['financials'][-1]['reportDate'] %></p>
-<%= column_chart [{name: "profit", data: finData}, {name: "revenue cost", data: costData}, {name: "r & d", data: rAndD}], colors: ["purple", "yellow", "red"]%>
+<h1><%=@financials['symbol']%> financial reports per quarter since <%= @financials['financials'][-1]['reportDate'] %></h1>
+<%= column_chart [{name: "profit $", data: finData}, {name: "revenue cost $", data: costData}, {name: "r & d $", data: rAndD}], colors: ["purple", "yellow", "red"]%>

@@ -38,3 +38,22 @@ a img:hover {
   font-weight: bold;
   font-size: 1.5em;
 }
+
+table, td {
+  padding: 10px;
+}
+
+th {
+  background-color: red;
+  color: white;
+  font-size: 1.5em;
+  border: solid 5px black;
+}
+
+.headline {
+  font-weight: bold;
+}
+
+.date {
+  min-width: 80px;
+}

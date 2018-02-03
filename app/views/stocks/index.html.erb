@@ -11,7 +11,8 @@
 <p><span class="label-title">Industry:</span> <%= @result['industry'] %></p>
 <p><span class="label-title">Description:</span> <%= @result['description'] %></p>
 <p><span class="label-title">Website:</span> <a href="<%= @result['website'] %>" target="_blank"><%= @result['website'] %></p></a>
-
+<hr />
+<h1>Top related news stories</h1>
 <table border="1px">
   <tr>
     <th>Date</th>
@@ -23,8 +24,8 @@
   </tr>
 <% @news.each do |article| %>
   <tr>
-    <td><%= article['datetime'] %></td>
-    <td><%= article['headline'] %></td>
+    <td class="date">Day: <%= article['datetime'].split("T")[0]%> Time: <%=article['datetime'].split("T")[1].first(5) %></td>
+    <td class="headline"><a href="<%= article['url']%>" target="_blank"><%= article['headline'] %></a></td>
     <td><%= article['summary'] %></td>
     <td><a href="<%= article['url']%>" target="_blank"><%= article['source'] %></a></td>
   </tr>
