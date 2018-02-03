@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.4.1'
 
 gem 'chartkick', '~> 1.2.4'
+gem 'highcharts-rails'
 gem 'groupdate'
 gem 'active_median', '~> 0.1.0'
 

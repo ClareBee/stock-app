@@ -6,7 +6,7 @@
 <p>Market Percent: <%= item['marketPercent'] %>%</p>
 <p>Last Sale Price: $<%= item['lastSalePrice'] %></p>
 <% end%>
-<%= line_chart({10.day.ago => 5, 15.day.ago => 10}) %>
+<%= pie_chart({10.day.ago => 5, 15.day.ago => 10})%>
 
 <table border="1px">
   <tr>
