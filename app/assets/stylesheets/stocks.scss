@@ -7,3 +7,34 @@
 #logo {
   font-size: 1.8em;
 }
+
+.jumbotron {
+  background-image: asset-url('stocksimage.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.center {
+  text-align: center;
+}
+
+a img {
+  width: 250px;
+  float: right;
+  border: solid 3px lightgray;
+  border-radius: 5px;
+  transition: all 0.2s ease-in-out;
+}
+
+a img:hover {
+  transform: scale(1.05);
+}
+
+#name {
+  color: red;
+}
+
+.label-title {
+  font-weight: bold;
+  font-size: 1.5em;
+}

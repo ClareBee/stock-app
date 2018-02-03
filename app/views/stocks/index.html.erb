@@ -1,20 +1,23 @@
-<%= link_to 'Charts', charts_path %>
 
-<h1>Stocks#index</h1>
+<div class="jumbotron center">
+
+</div>
+
+<h2 id="name"><%= @result['symbol'] %></h2>
 <%= link_to image_tag('alphabet.jpg'), @result['website'] %>
-<h2><%= @result['symbol'] %></h2>
-<p>Company Name: <%= @result['companyName'] %></p>
-<p>Industry: <%= @result['industry'] %></p>
-<p>Description: <%= @result['description'] %></p>
-<p>Website: <a href="<%= @result['website'] %>" target="_blank"><%= @result['website'] %></p></a>
 
+<p><span class="label-title">Company Name:</span> <%= @result['companyName'] %></p>
+
+<p><span class="label-title">Industry:</span> <%= @result['industry'] %></p>
+<p><span class="label-title">Description:</span> <%= @result['description'] %></p>
+<p><span class="label-title">Website:</span> <a href="<%= @result['website'] %>" target="_blank"><%= @result['website'] %></p></a>
 
 <table border="1px">
   <tr>
     <th>Date</th>
     <th>Headline</th>
     <th>Summary</th>
-    <th>Source</th>
+    <th>Article</th>
 
 
   </tr>
